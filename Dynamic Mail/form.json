@@ -42,7 +42,6 @@
             "rowCount": 5,
             "add": true,
             "delete": true,
-            "visible": false,
             "columns": [
                 {
                     "caption": "Variable ID",
@@ -67,11 +66,6 @@
                     "save": false
                 }
             ]
-        },
-        {
-            "type": "Button",
-            "caption": "Analyze E-Mail",
-            "onClick": "DM_UIAnalyze($id);"
         }
     ],
     "status": [

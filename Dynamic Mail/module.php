@@ -33,8 +33,7 @@ class DynamicMail extends IPSModule
 
         //Register all references
         $text = $this->ReadPropertyString('DynamicSubject') . ' ' . $this->ReadPropertyString('DynamicText');
-        preg_match_all("/\{([1-9]{1}[0-9]{4})\}/", $text, $placeholders);
-        $placeholders = $placeholders[1];
+        $placeholders = $this->getPlaceholder($text);
         foreach ($placeholders as $key => $placeholder) {
             $this->RegisterReference($placeholder);
         }
@@ -46,6 +45,7 @@ class DynamicMail extends IPSModule
         $form = json_decode(file_get_contents(__DIR__ . '/form.json'), true);
         $form['actions'][1]['caption'] = $this->Translate('Preview E-Mail with Subject') . ' :' . $this->replacePlaceholder($dynamicText = $this->ReadPropertyString('DynamicSubject'));
         $form['actions'][2]['caption'] = $this->replacePlaceholder($dynamicText = $this->ReadPropertyString('DynamicText'));
+        $form['actions'][3]['values'] = $this->analyzeVariable();
         return json_encode($form);
     }
 
@@ -65,13 +65,12 @@ class DynamicMail extends IPSModule
         );
     }
 
-    public function UIAnalyze(): void
+    private function analyzeVariable(): array
     {
         $values = [];
         $getPlaceholder = function (string $text) use (&$values): void
         {
-            preg_match_all("/\{([1-9]{1}[0-9]{4})\}/", $text, $placeholders);
-            $placeholders = $placeholders[1];
+            $placeholders = $this->getPlaceholder($text);
             foreach ($placeholders as $key => $placeholder) {
                 $status = IPS_VariableExists(intval($placeholder)) ? 'OK' : $this->Translate('Invalid');
                 $values[] = [
@@ -85,10 +84,13 @@ class DynamicMail extends IPSModule
         $getPlaceholder($this->ReadPropertyString('DynamicSubject'));
         $getPlaceholder($this->ReadPropertyString('DynamicText'));
 
-        if (count($values) !== 0) {
-            $this->UpdateFormField('Placeholders', 'visible', true);
-            $this->UpdateFormField('Placeholders', 'values', json_encode($values));
-        }
+        return $values;
+    }
+
+    private function getPlaceholder(string $text): array
+    {
+        preg_match_all("/\{([1-9]{1}[0-9]{4})\}/", $text, $placeholders);
+        return $placeholders[1];
     }
 
     private function checkSMTPInstance(): bool
