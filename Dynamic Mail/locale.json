@@ -1,0 +1,19 @@
+{
+    "translations": {
+        "de": {
+            "Dynamic Mail": "Dynamische E-Mail",
+            "https://www.symcon.de/en/service/documentation/module-reference/dynamic-mail": "https://www.symcon.de/de/service/dokumentation/modulreferenz/dynamische-email",
+            "SMTP Instance": "SMTP Instanz",
+            "Dynamic Subject": "Dynamischer Betreff",
+            "Dynamic Text": "Dynamischer Text",
+            "Preview E-Mail with Subject": "Vorschau E-Mail mit Betreff",
+            "Placeholder Variables": "Platzhalter Variablen",
+            "Variable ID": "Variablen ID",
+            "Analyze E-Mail": "E-Mail analysieren",
+            "Test Sending": "Versenden testen",
+            "With {12345} the variable value can be insert.": "Mit {12345} kann der Variablenwert eingesetzt werden.",
+            "Invalid": "Ungültig",
+            "Current Value": "Momentaner Wert"
+        }
+    }
+}

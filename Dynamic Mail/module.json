@@ -1,0 +1,12 @@
+{
+    "id": "{D595DD95-1AB8-00CD-C609-FFAA2472DDC2}",
+    "name": "Dynamic Mail",
+    "type": 3,
+    "vendor": "",
+    "aliases": [],
+    "parentRequirements": [],
+    "childRequirements": [],
+    "implemented": [],
+    "prefix": "DM",
+    "url": "https://www.symcon.de/en/service/documentation/module-reference/dynamic-mail"
+}

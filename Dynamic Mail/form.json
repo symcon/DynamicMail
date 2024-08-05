@@ -1,0 +1,89 @@
+{
+    "elements": [
+        {
+            "type": "SelectInstance",
+            "name": "SMTPInstance",
+            "caption": "SMTP Instance"
+        },
+        {
+            "type": "Label",
+            "caption": "With {12345} the variable value can be insert."
+        },
+        {
+            "type": "ValidationTextBox",
+            "name": "DynamicSubject",
+            "caption": "Dynamic Subject"
+        },
+        {
+            "type": "ValidationTextBox",
+            "name": "DynamicText",
+            "caption": "Dynamic Text",
+            "multiline": true
+        }
+    ],
+    "actions": [
+        {
+            "type": "Button",
+            "caption": "Test Sending",
+            "onClick": "DM_SendMail($id);"
+        },
+        {
+            "type": "Label",
+            "caption": "Preview E-Mail with Subject"
+        },
+        {
+            "type": "Label",
+            "caption": "Placeholder"
+        },
+        {
+            "type": "List",
+            "name": "Placeholders",
+            "caption": "Placeholder Variables",
+            "rowCount": 5,
+            "add": true,
+            "delete": true,
+            "visible": false,
+            "columns": [
+                {
+                    "caption": "Variable ID",
+                    "name": "VariableID",
+                    "width": "auto",
+                    "add": 0,
+                    "edit": {
+                        "type": "SelectVariable"
+                    }
+                },
+                {
+                    "caption": "Current Value",
+                    "name": "CurrentValue",
+                    "add": "",
+                    "width": "200px"
+                },
+                {
+                    "caption": "Status",
+                    "name": "Status",
+                    "width": "100px",
+                    "add": "",
+                    "save": false
+                }
+            ]
+        },
+        {
+            "type": "Button",
+            "caption": "Analyze E-Mail",
+            "onClick": "DM_UIAnalyze($id);"
+        }
+    ],
+    "status": [
+        {
+            "code": 201,
+            "icon": "error",
+            "caption": "SMTP Instance is missing"
+        },
+        {
+            "code": 202,
+            "icon": "error",
+            "caption": "SMTP Instance inactive"
+        }
+    ]
+}
