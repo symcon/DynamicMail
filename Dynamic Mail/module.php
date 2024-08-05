@@ -87,12 +87,6 @@ class DynamicMail extends IPSModule
         return $values;
     }
 
-    private function getPlaceholder(string $text): array
-    {
-        preg_match_all("/\{([1-9]{1}[0-9]{4})\}/", $text, $placeholders);
-        return $placeholders[1];
-    }
-
     private function checkSMTPInstance(): bool
     {
         $instance = $this->ReadPropertyInteger('SMTPInstance');
@@ -107,6 +101,12 @@ class DynamicMail extends IPSModule
         }
         $this->SetStatus(102);
         return true;
+    }
+
+    private function getPlaceholder(string $text): array
+    {
+        preg_match_all("/\{([1-9]{1}[0-9]{4})\}/", $text, $placeholders);
+        return $placeholders[1];
     }
 
     private function replacePlaceholder(string $dynamicText): string

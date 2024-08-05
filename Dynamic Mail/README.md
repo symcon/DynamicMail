@@ -13,8 +13,8 @@ Versendet eine E-Mail mit einem dynamischen Text.
 
 ### 1. Funktionsumfang
 
-* Versenden einer E-Mail mit einem festen Text
-* Dynamik durchs einsetzen verschiedener Variablenwerte
+* Versenden einer E-Mail mit einem festen/dynamischen Text
+* Dynamik durch das Ersetzen von Platzhaltern durch die Variablenwerte
 
 ### 2. Voraussetzungen
 
@@ -37,15 +37,15 @@ SMTP Instanz  | SMTP Instanz welche vollständig eingerichtet ist
 Dynamischer Betreff  | Texteingabe welche gesetzt werden kann.
 Dynamischer Text | Mehrzeilige Texteingabe.
 
-Der Betreff wie auch der Text bekommt eine dynamik durchs einsetzen von Variablenwerte. Diese konnen innerhalb des Textes durch die in geschweifte Klammern gesetzte VariablenID gesetzt werden. Ist die ID zu kurz oder keine Variable, so bleiben die Klammern mit der Nummer bestehen.
+Der Betreff wie auch der Text bekommt eine dynamik durchs einsetzen von Variablenwerte. Diese können innerhalb des Textes durch die in geschweifte Klammern gesetzte VariablenID gesetzt werden. Ist die ID zu kurz oder keine Variable, so bleiben die Klammern mit der Nummer bestehen.
 
 __Aktionsbereich__:
 
 Name | Beschreibung 
 ---- |  ------ 
 Versenden Testen | Verschickt eine E-Mail mit dem gesetzten Betreff und Text
-Vorschau E-Mail  | Eine Vorschau mit gesetzten Variablewerte
-E-Mail Analysieren | Sollte ein Platzhalter bestehen bleiben, erscheint mit einem Klick eine Tabelle
+Vorschau E-Mail mit Betreff  | Eine Vorschau mit gesetzten Variablewerte
+Platzhalter Variablen | Tabelle mit den gegebenen Platzhaltern
 
 Tabelle: 
 In der Tabelle sind die gefundenen Platzhalter mit ihren aktuellen Wert und ihrem Status aufgelistet. Ist ein Platzhalter nicht verfügbar ist die eingegebene Nummer keine ID. Ist ein Platzhalter ungültig, so ist die gefundene ID keine Variable. 
