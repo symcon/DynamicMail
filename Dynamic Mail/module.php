@@ -24,7 +24,9 @@ class DynamicMail extends IPSModule
         //Never delete this line!
         parent::ApplyChanges();
 
-        $this->checkSMTPInstance();
+        if (IPS_GetKernelRunlevel() == KR_READY) {
+            $this->checkSMTPInstance();
+        }
 
         //Unregister all reference
         foreach ($this->GetReferenceList() as $reference) {
