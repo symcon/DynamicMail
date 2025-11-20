@@ -2,7 +2,7 @@
     "translations": {
         "de": {
             "Dynamic Mail": "Dynamische E-Mail",
-            "https://www.symcon.de/en/service/documentation/module-reference/dynamic-mail": "https://www.symcon.de/de/service/dokumentation/modulreferenz/dynamische-email",
+            "https://www.symcon.de/en/service/documentation/module-reference/notifications/dynamic-mail/": "https://www.symcon.de/de/service/dokumentation/modulreferenz/benachrichtigungen/dynamische-email/",
             "SMTP Instance": "SMTP Instanz",
             "Dynamic Subject": "Dynamischer Betreff",
             "Dynamic Text": "Dynamischer Text",
